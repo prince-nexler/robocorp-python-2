@@ -70,6 +70,7 @@ def print_receipt(order_num):
 def fill_the_form(orders):
     page = browser.page()
     for order in orders:
+        print(order)
         close_annoying_modal()
         print("Here")
         # {'Order number': '1', 'Head': '1', 'Body': '2', 'Legs': '3', 'Address': 'Address 123'}
@@ -105,5 +106,5 @@ def open_robot_order_website():
 
 def close_annoying_modal():
     page = browser.page()
-    page.wait_for_selector("button[class='btn btn-dark']", timeout=100)
+    page.wait_for_selector("button[class='btn btn-dark']", timeout=1000)
     page.click("button[class='btn btn-dark']")
